@@ -1,0 +1,69 @@
+/* Set main container height and width */
+.main {
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Ensure images and videos fill their containers */
+img,
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Center content within the container */
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling for banner section */
+.banner {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  margin-bottom: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  color: white;
+}
+
+/* Overlay for banner section */
+.banner::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  left: 0;
+  top: 0;
+}
+
+/* Styling for banner content */
+.banner-content {
+  z-index: 2;
+  max-width: min(100%, 956px); /* Limit maximum width */
+}
+
+/* Margin for button container within banner content */
+.banner-content .button-container {
+  margin-top: 20px;
+}
+
+/* Limit maximum width for paragraph within banner content */
+.banner p {
+  max-width: min(100%, 750px);
+}
+
+/* Media query for smaller screens */
