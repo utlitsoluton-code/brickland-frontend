@@ -90,7 +90,8 @@ const CreateListings = ({ setIsLoggedIn }) => {
   const handleShowListings = async () => {
     try {
       setShowListingsError(false);
-      const response = await fetch("http://localhost:3001/api/data/");
+      
+      const response = await fetch(`https://brickland-backend-4.onrender.com/api/data/`);
       const data = await response.json();
       if (data.success === false) {
         setShowListingsError(true);
@@ -105,7 +106,7 @@ const CreateListings = ({ setIsLoggedIn }) => {
   const handleListingDelete = async (listingId) => {
     try {
       const res = await fetch(
-        `http://localhost:3001/api/data/delete/${listingId}`,
+        `https://brickland-backend-4.onrender.com/api/data/delete/${listingId}`,
         {
           method: "DELETE",
         }
@@ -170,7 +171,7 @@ const CreateListings = ({ setIsLoggedIn }) => {
         return setError("Discount price must be lower than regular price");
       setLoading(true);
       setError(false);
-      const res = await fetch("http://localhost:3001/api/data/create", {
+      const res = await fetch(`https://brickland-backend-4.onrender.com/api/data/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

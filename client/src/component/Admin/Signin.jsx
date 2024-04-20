@@ -8,7 +8,7 @@ const Signin = ({ setIsLoggedIn }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3001/verify", {
+      const res = await axios.post(`https://brickland-backend-4.onrender.com/verify`, {
         email,
         password,
       });

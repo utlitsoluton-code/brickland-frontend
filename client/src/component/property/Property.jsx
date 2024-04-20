@@ -5,19 +5,21 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 export default function Property() {
   const [properties, setProperties] = useState([]);
+  
   useEffect(() => {
     fetchProperties();
   }, []);
 
   const fetchProperties = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/data/');
+      const response = await fetch(`https://brickland-backend-4.onrender.com/api/data/`);
       const data = await response.json();
       setProperties(data);
     } catch (error) {
       console.error('Error fetching properties:', error);
     }
   };
+  
   return (
     <div>
       <div className='flex flex-col gap-6 p-28 px-3

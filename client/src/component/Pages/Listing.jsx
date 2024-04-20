@@ -33,7 +33,7 @@ export default function Listing() {
       try {
         setLoading(true);
         const res = await fetch(
-          `http://localhost:3001/api/data/get/${params.listingId}`
+          `https://brickland-backend-4.onrender.com/api/data/get/${params.listingId}`
         );
         const data = await res.json();
         
@@ -56,7 +56,7 @@ export default function Listing() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3001/send-email', { name, email, city, mobile, message,property: listing.name});
+      await axios.post(`https://brickland-backend-4.onrender.com/send-email`, { name, email, city, mobile, message,property: listing.name});
       alert('Message sent successfully!');
       setName('');
       setEmail('');

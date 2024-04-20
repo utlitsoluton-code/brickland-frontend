@@ -8,11 +8,10 @@ const ContactForm = () => {
   const [mobile, setMobile] = useState("");
   const [message, setMessage] = useState("");
   const [isHovered, setIsHovered] = useState(false);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3001/send-email", {
+      await axios.post(`https://brickland-backend-4.onrender.com/send-email`, {
         name,
         email,
         city,

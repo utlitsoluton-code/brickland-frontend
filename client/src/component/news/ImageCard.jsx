@@ -5,7 +5,7 @@ export default function imageCard({ listing }) {
   return (
     <div className='bg-white shadow-md hover:shadow-lg
     transition-shadow overflow-hidden rounded-lg w-full sm:w-[330px]'>
-     <Link to={`http://localhost:3001/api/data/`}>
+     <Link to={`https://brickland-backend-4.onrender.com/api/data/`}>
          <img src={listing.imageUrls[Math.floor(Math.random()*3)] } 
          alt="listings"
          className='h-[320px] sm:h-[220px] w-full

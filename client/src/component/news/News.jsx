@@ -13,7 +13,7 @@ export default function News() {
 
   const fetchProperties = async () => {
     try {
-      const response = await fetch("http://localhost:3001/api/data");
+      const response = await fetch(`https://brickland-backend-4.onrender.com/api/data`);
       const data = await response.json();
       setProperties(data);
       setFilteredProperties(data.slice(15, 21));

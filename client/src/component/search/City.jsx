@@ -5,14 +5,13 @@ const City = () => {
   const [properties, setProperties] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [filteredProperties, setFilteredProperties] = useState([]);
-
   useEffect(() => {
     fetchProperties();
   }, []);
 
   const fetchProperties = async () => {
     try {
-      const response = await fetch("http://localhost:3001/api/data");
+      const response = await fetch(`https://brickland-backend-4.onrender.com/api/data`);
       const data = await response.json();
       setProperties(data);
       setFilteredProperties(data.slice(0, 6));
