@@ -71,7 +71,353 @@ export default function Listing() {
   };
 
   return (
-
+    // new code 
+    <>
+ <div className="property-details-area ptb-120">
+  <div className="container">
+    <div className="row justify-content-center">
+      <div className="property-details-desc">
+        <div className="property-details-content">
+          <div className="row justify-content-center align-items-center">
+            <div className="col-lg-7 col-md-12">
+              <div className="left-content">
+                <div className="title">
+                  <h2>Luxury Apartments</h2>
+                </div>
+                <span className="address">
+                  194 Mercer Street, NY 10012, USA
+                </span>
+                <ul className="info-list">
+                  <li>
+                    <div className="icon">
+                      <img
+                        src="../bed.svg"
+                        alt="bed"
+                      />
+                    </div>
+                    <span>6 Bedroom</span>
+                  </li>
+                  <li>
+                    <div className="icon">
+                      <img
+                        src="../bathroom.svg"
+                        alt="bathroom"
+                      />
+                    </div>
+                    <span>4 Bathroom</span>
+                  </li>
+                  <li>
+                    <div className="icon">
+                      <img
+                        src="../parking.svg"
+                        alt="parking"
+                      />
+                    </div>
+                    <span>1 Parking</span>
+                  </li>
+                  <li>
+                    <div className="icon">
+                      <img
+                        src="../area.svg"
+                        alt="area"
+                      />
+                    </div>
+                    <span>3250 Area</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-lg-5 col-md-12">
+              <div className="right-content">
+                <div className="price">$95,000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="property-details-image">
+          <div className="row justify-content-center align-items-center">
+            <div className="col-lg-4 col-md-12">
+              <div className="row justify-content-center">
+                <div className="col-lg-6 col-sm-6">
+                  <div className="block-image">
+                    <img
+                      src="../property-details1.jpg"
+                      alt="image"
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-6 col-sm-6">
+                  <div className="block-image">
+                    <img
+                      src="../property-details2.jpg"
+                      alt="image"
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-6 col-sm-6">
+                  <div className="block-image">
+                    <img
+                      src="../property-details3.jpg"
+                      alt="image"
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-6 col-sm-6">
+                  <div className="block-image">
+                    <img
+                      src="../property-details4.jpg"
+                      alt="image"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-8 col-md-12">
+              <div className="block-image">
+                <img
+                  src="../property-details-large.jpg"
+                  alt="image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="property-details-inner-content">
+          <div className="row justify-content-center">
+            <div className="col-xl-8 col-md-12">
+              <div className="description">
+                <h3>Property Description</h3>
+                <p>
+                  Proin gravida nibh vel velit auctor aliquet. Aenean
+                  sollicitudin quis bibendum auctor, nisilit consequat ipsum,
+                  nec sagittis sem nibh id elit. Duis sed odio sit amet nibh
+                  vulputate cursus a sit amet mauris. Morbi accumsan ipsum
+                  velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
+                  Sed non mauris vitae erat consequat auctor eu in elit. Class
+                  aptent taciti sociosqu.
+                </p>
+                <p>
+                  Gravida nibh vel velit auctor aliquet. Aenean sollicitudin
+                  quis bibendum auctor, nisilit consequat ipsum, nec sagittis
+                  sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus
+                  a sit amet mauris. Morbi acnec tellus a odio tincidunt auctor
+                  a ornare odio.
+                </p>
+              </div>
+              <div className="overview">
+                <h3>Property Overview</h3>
+                <ul className="overview-list">
+                  <li>
+                    <img
+                      src="../bed2.svg"
+                      alt="bed2"
+                    />
+                    <h4>Bedrooms</h4>
+                    <span>4 Bedrooms / 1 Guestroom</span>
+                  </li>
+                  <li>
+                    <img
+                      src="../bathroom2.svg"
+                      alt="bathroom2"
+                    />
+                    <h4>Bedrooms</h4>
+                    <span>4 Bedrooms / 1 Guestroom</span>
+                  </li>
+                  <li>
+                    <img
+                      src="../parking2.svg"
+                      alt="parking2"
+                    />
+                    <h4>Parking</h4>
+                    <span>Free Parking for 4 Cars</span>
+                  </li>
+                  <li>
+                    <img
+                      src="../area2.svg"
+                      alt="area2"
+                    />
+                    <h4>Accommodation</h4>
+                    <span>6 Guest / 2980 Sq Ft</span>
+                  </li>
+                  <li>
+                    <img
+                      src="../home.svg"
+                      alt="home"
+                    />
+                    <h4>Property Type</h4>
+                    <span>Entire Place / Apartment</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="features">
+                <h3>Facts And Features</h3>
+                <div className="row justify-content-center">
+                  <div className="col-lg-4 col-md-4">
+                    <ul className="list">
+                      <li>
+                        <i className="ri-check-double-fill" />
+                        Air Conditioning
+                      </li>
+                      <li>
+                        <i className="ri-check-double-fill" />
+                        Dishwasher
+                      </li>
+                      <li>
+                        <i className="ri-check-double-fill" />
+                        Internet
+                      </li>
+                      <li>
+                        <i className="ri-check-double-fill" />
+                        Supermarket/Store
+                      </li>
+                      <li>
+                        <i className="ri-check-double-fill" />
+                        Build-In Wardrobes
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="col-lg-4 col-md-4">
+                    <ul className="list">
+                      <li>
+                        <i className="ri-check-double-fill" />
+                        Fencing
+                      </li>
+                      <li>
+                        <i className="ri-check-double-fill" />
+                        Park
+                      </li>
+                      <li>
+                        <i className="ri-check-double-fill" />
+                        Swimming Pool
+                      </li>
+                      <li>
+                        <i className="ri-check-double-fill" />
+                        Clinic
+                      </li>
+                      <li>
+                        <i className="ri-check-double-fill" />
+                        Floor Coverings
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="col-lg-4 col-md-4">
+                    <ul className="list">
+                      <li>
+                        <i className="ri-check-double-fill" />
+                        School
+                      </li>
+                      <li>
+                        <i className="ri-check-double-fill" />
+                        Transportation Hub
+                      </li>
+                      <li>
+                        <i className="ri-check-double-fill" />
+                        Gym Availability
+                      </li>
+                      <li>
+                        <i className="ri-check-double-fill" />
+                        Lawn
+                      </li>
+                      <li>
+                        <i className="ri-check-double-fill" />
+                        Security Guard
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-4 col-md-12">
+              <div className="property-details-sidebar">
+                <div className="booking">
+                  <form>
+                    <div className="form-group">
+                      <label>Name</label>
+                      <input
+                        type="text"
+                        placeholder="Your name"
+                        className="form-control"
+                      />
+                      <div className="icon">
+                        <i className="ri-user-3-line" />
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <label>Email</label>
+                      <input
+                        type="text"
+                        placeholder="Your email"
+                        className="form-control"
+                      />
+                      <div className="icon">
+                        <i className="ri-mail-send-line" />
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <label>Phone No.</label>
+                      <input
+                        type="text"
+                        placeholder={+12345678}
+                        className="form-control"
+                      />
+                      <div className="icon">
+                        <i className="ri-phone-line" />
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <label>Phone No.</label>
+                      <input
+                        type="text"
+                        placeholder={"Your City"}
+                        className="form-control"
+                      />
+                      <div className="icon">
+                        <i className="ri-building-line" />
+                      </div>
+                    </div>
+                    <div className="form-group extra-top">
+                      <label>Description</label>
+                      <textarea
+                        className="form-control"
+                        placeholder="I'm interested in this property......."
+                        rows={5}
+                        defaultValue={""}
+                      />
+                      <div className="icon">
+                        <i className="ri-pencil-line" />
+                      </div>
+                    </div>
+                    <button type="submit" className="default-btn">
+                      Submit Request
+                    </button>
+                  </form>
+                </div>
+                <div className="contact-details">
+                  <h3>Contact Details</h3>
+                  <ul className="list">
+                    <li>
+                      <span>Email:</span>
+                      <a href="mailto:contact@hello.com">contact@hello.com</a>
+                    </li>
+                    <li>
+                      <span>Phone:</span>
+                      <a href="tel:01234567890">0123 456 7890</a>
+                    </li>
+                    <li>
+                      <span>Location:</span>
+                      New York, USA
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{/* existing code  */}
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 px-4 sm:px-6 lg:px-8">
       <div className="mt-10">
         <div className="container mx-auto max-w-[700px]">
@@ -247,6 +593,7 @@ export default function Listing() {
         </div>
       </div>
     </div>
+    </>
   );
   
 }

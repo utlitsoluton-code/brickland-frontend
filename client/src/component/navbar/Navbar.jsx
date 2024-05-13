@@ -5,12 +5,13 @@ import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Home", current: false, path: "/" },
-  { name: "Property", current: false, path: "/property" },
+  { name: "Event", current: false, path: "/event" },
+  { name: "Testimonial", current: false, path: "/testimonial" },
+  { name: "Wishlist", current: false, path: "/wishlist" },
   { name: "Search", current: false, path: "/search" },
-  { name: "News", current: false, path: "/news" },
+  { name: "Blogs", current: false, path: "/blog" },
   { name: "About us", current: false, path: "/aboutus" },
-  { name: "Contact us", current: false, path: "/contactus" },
-  { name: "Admin", current: true, path: "/admin" },
+  { name: "Contact us", current: false, path: "/contactus" }
 ];
 
 function classNames(...classes) {
@@ -26,10 +27,57 @@ export default function Navbar() {
     >
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-9xl px-2 sm:px-6 lg:px-8 ml-0">
-            <div className="relative flex h-16 items-center justify-between">
+        <div className="top-header-area">
+  <div className="container-fluid">
+    <div className="top-header-inner">
+      <div className="row justify-content-center align-items-center">
+        <div className="col-lg-7 col-md-7">
+          <ul className="top-header-info-with-social">
+            <li>
+              <div className="social">
+                <a href="https://www.facebook.com/" >
+                  <i className="ri-facebook-fill" />
+                </a>
+                <a href="https://twitter.com/" >
+                  <i className="ri-twitter-x-line" />
+                </a>
+                <a href="https://www.instagram.com/" >
+                  <i className="ri-instagram-fill" />
+                </a>
+                <a href="https://bd.linkedin.com/" >
+                  <i className="ri-linkedin-fill" />
+                </a>
+                <a href="https://www.youtube.com/" >
+                  <i className="ri-youtube-line" />
+                </a>
+                <a href="https://www.pinterest.com/" >
+                  <i className="ri-pinterest-line" />
+                </a>
+              </div>
+            </li>
+            <li>
+              <div className="mail-info">
+                <i className="ri-mail-line" />
+                <a href="mailto:info@bricklandindia.com">info@bricklandindia.com</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div className="col-lg-5 col-md-5 text-end">
+          <div className="top-header-call-info">
+            <i className="ri-phone-line" />
+            <a href="tel:+91 88 6900 3900">+91 88 6900 3900</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div className="mx-auto  px-5 sm:px-6 lg:px-8 ml-0">
+            <div className="relative flex h-20   items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="relative inline-flex items-center justify-center  rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -47,7 +95,7 @@ export default function Navbar() {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start w-full">
+              <div className="flex flex-1 items-center justify-center menubars sm:items-stretch sm:justify-start w-full">
                 <div className="flex lg:min-w-min lg:flex-1">
                   <Link to="/">
                     <img
@@ -57,8 +105,8 @@ export default function Navbar() {
                     />
                   </Link>
                 </div>
-                <div className="hidden sm:block">
-                  <div className="flex space-x-4">
+                <div className="hidden md:block">
+                  <div className="flex gap-3">
                     {navigation.map((item) => (
                       <Typography
                         component={Link}
@@ -66,9 +114,9 @@ export default function Navbar() {
                         to={item.path}
                         className={classNames(
                           item.current
-                            ? "bg-yellow-400 text-black hover:bg-green-400 hover:text-white"
-                            : "text-black hover:bg-gray-700 hover:text-white",
-                          "rounded-md px-3 py-2 text-sm font-medium"
+                            ? "bg-[#B07C4D] text-white hover:bg-[black] hover:text-white"
+                            : "text-black hover:bg-[#B07C4D] hover:text-white",
+                          "rounded-full px-6  py-2 text-sm "
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
@@ -99,7 +147,7 @@ export default function Navbar() {
               ))}
             </div>
           </Disclosure.Panel>
-        </>
+        </>     
       )}
     </Disclosure>
   );

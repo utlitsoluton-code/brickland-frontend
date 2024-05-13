@@ -1,13 +1,9 @@
 import {
   Box,
-  Card,
-  CardContent,
   Container,
   Grid,
-  Typography,
 } from "@mui/material";
 import React from "react";
-import { ReactTyped } from "react-typed";
 
 const AboutUs = () => {
   return (
@@ -41,112 +37,154 @@ const AboutUs = () => {
             zIndex: 1,
           }}
         >
-          <Container maxWidth="xl">
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <Typography
-                  variant="h1"
-                  sx={{
-                    fontSize: ["1.8em", "2em", "2.5em", "3em"],
-                    fontWeight: "bold",
-                    color: "white",
-                    marginBottom: "5rem",
-                  }}
-                >
-                  We are{" "}
-                  <ReactTyped
-                    strings={[
-                      "Transforming Real Estate: Innovation and Dedication",
-                      "Revolutionizing the Real Estate Landscape: Innovation and Dedication",
-                      "Pioneering Real Estate: Innovation and Dedication",
-                      "Shaping the Future of Real Estate: Innovation and Dedication",
-                      "Elevating Real Estate Standards: Innovation and Dedication",
-                      "Leading the Evolution of Real Estate: Innovation and Dedication",
-                      "Setting New Horizons in Real Estate: Innovation and Dedication",
-                    ]}
-                    typeSpeed={100}
-                    loop
-                    backSpeed={20}
-                    showCursor={false}
-                  />
-                </Typography>
-              </Grid>
-            </Grid>
-          </Container>
+        
         </Box>
-        <Box
-          id="service"
-          sx={{
-            width: "100%",
-            minHeight: "100vh",
-            padding: "2rem",
-            display: "flex",
-            alignItems: "center",
-            background: "linear-gradient(to bottom, white, #A5A5A5)",
-          }}
-        >
-          <Container maxWidth="xl">
-            <Grid container>
-              <Grid item xs={12}>
-                <Grid container spacing={2} justifyContent="center">
-                  {/* Owner Photo Card */}
-                  <Grid item xs={12} sm={6}>
-                    <Card>
-                      <CardContent>
-                        <img
-                          src="https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_1280.png" 
-                          alt="Owner"
-                          style={{ width: "100%", height: "auto" }}
-                        />
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                  {/* Owner Information */}
-                  <Grid item xs={12} sm={6}>
-                    <Card>
-                      <CardContent>
-                        <Typography
-                          variant="h4"
-                          sx={{ fontWeight: "bold" }}
-                          gutterBottom
-                        >
-                          About the Founder and Chairman
-                        </Typography>
-                        <Typography variant="body1">
-                          Jaidev Pandey, a dynamic leader and visionary
-                          entrepreneur, embarked on his journey with Brickland
-                          Consulting in January 2021, marking the inception of a
-                          remarkable career in the real estate. With over a
-                          decade of extensive experience, Jaidev possesses a
-                          profound understanding of the industry landscape.
-                        </Typography>
-                        <Typography variant="body1" mt={2}>
-                          Driven by a relentless pursuit of excellence, Jaidev
-                          leads with a strategic mindset, shaping the trajectory
-                          of Brickland Consulting growth. As a seasoned
-                          professional, he spearheads the formulation of robust
-                          policies and procedures for the Sales and Marketing
-                          teams, setting the gold standard for customer
-                          relationship management.
-                        </Typography>
-                        <Typography variant="body1" mt={2}>
-                          Jaidev's astute leadership has propelled Brickland
-                          Consulting forward, navigating the company towards
-                          unprecedented success. His visionary approach has
-                          positioned the company for expansion In the
-                          ever-evolving world of real estate, Jaidev Singh
-                          stands as a beacon of innovation and leadership,
-                          driving Brickland Consulting towards new horizons of
-                          achievement and excellence.
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Container>
-        </Box>
+        {/* about us  */}
+<div className="why-choose-area pt-120 pb-95">
+  <div className="container">
+    <div
+      className="row justify-content-center"
+      data-cues="slideInUp"
+      data-disabled="true"
+    >
+      <div
+        className="col-lg-3 col-md-6"
+        
+      >
+        <div className="why-choose-content">
+          <span className="sub">Bricks And Clicks</span>
+          <h2>Why Choose Us?</h2>
+        </div>
+      </div>
+      <div
+        className="col-lg-3 col-md-6"
+       
+      >
+        <div className="why-choose-card">
+          <div className="image">
+            <img src="./why-choose1.png" alt="sell" />
+          </div>
+          <h3>Sell, Rent Property Free</h3>
+          <p>
+          Our experts answer all queries with their unmatched knowledge at every step of home buying.
+          </p>
+        </div>
+      </div>
+      <div
+        className="col-lg-3 col-md-6"
+       
+      >
+        <div className="why-choose-card">
+          <div className="image">
+            <img src="./why-choose2.png" alt="hotspots" />
+          </div>
+          <h3>In-depth Info on Investment Hotspots</h3>
+          <p>
+          Our experts answer all queries with their unmatched knowledge at every step of home buying.
+          </p>
+        </div>
+      </div>
+      <div
+        className="col-lg-3 col-md-6"
+       
+      >
+        <div className="why-choose-card">
+          <div className="image">
+            <img src="./why-choose3.png" alt="pool" />
+          </div>
+          <h3>Pool of Best Property Options</h3>
+          <p>
+          Our experts answer all queries with their unmatched knowledge at every step of home buying.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{/* end about us  */}
+{/* what we do section who we are  */}
+<div className="sell-area">
+  <div className="container-fluid">
+    <div
+      className="row justify-content-center"
+    >
+      <div
+        className="col-lg-7 col-md-12"
+       
+      >
+        <div className="sell-image" />
+      </div>
+      <div
+        className="col-lg-5 col-md-12"
+       
+      >
+        <div className="sell-content">
+          <span className="sub">Unlocking Dreams, Opening Doors</span>
+          <h2>Navigating Your Home Odyssey Your Sanctuary</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et mauris
+            eget ornare venenatis, in. Pharetra iaculis consectetur augue
+            venenatis enim adipiscing risus sit scelerisque. Id metus viverra
+            tellus.
+          </p>
+          <div className="inner">
+            <h3>Sell Your Property</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et mauris
+              eget ornare.
+            </p>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{/* what we do section who we are  */}
+{/* rent property  */}
+<div className="rent-area pb-120">
+  <div className="container-fluid">
+    <div
+      className="row justify-content-center"
+      data-cues="slideInUp"
+      data-disabled="true"
+    >
+      <div
+        className="col-lg-5 col-md-12"
+      
+      >
+        <div className="rent-content">
+          <span className="sub">Beyond Brick and Mortar</span>
+          <h2>Where Vision Meets Realty Crafting Your Perfect Home</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et mauris
+            eget ornare venenatis, in. Pharetra iaculis consectetur augue
+            venenatis enim adipiscing risus sit scelerisque. Id metus viverra
+            tellus.
+          </p>
+          <div className="inner">
+            <h3>Rent A Home</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et mauris
+              eget ornare.
+            </p>
+            
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-lg-7 col-md-12"
+       
+      >
+        <div className="rent-image" />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{/* rent property end */}
         <Box
           id="service"
           sx={{

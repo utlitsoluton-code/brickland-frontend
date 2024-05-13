@@ -32,47 +32,152 @@ const ContactForm = () => {
 
   return (
     <>
-      <div className="contact-us-container">
-        <h1 style={{ fontSize: "3em", fontWeight: "bold" }}>Contact Us</h1>
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Your Name"
-            value={name}
-            required="true"
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            required="true"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Your City"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Mobile Number"
-            name="IN"
-            required="true"
-            title="Enter a valid number"
-            pattern="[1-9]{1}[0-9]{9}"
-            value={mobile}
-            onChange={(e) => setMobile(e.target.value)}
-          />
-          <textarea
-            placeholder="Your Message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          ></textarea>
-          <button type="submit">Send Message</button>
-        </form>
+    {/* new data  */}
+    <div className="contact-area ptb-120">
+    
+  <div className="container">
+    <div
+      className="row justify-content-center"
+    >
+      <div
+        className="col-lg-4 col-md-5"
+       
+      >
+        <div className="contact-info-box">
+          <div className="box">
+            <div className="icon">
+              <i className="ri-map-pin-line" />
+            </div>
+            <div className="info">
+              <h4>Our Location</h4>
+              <span>
+                 511, Floor P5, Urbtech NPX Tower, Sector 153, Noida 201310</span>
+            </div>
+          </div>
+          <div className="box">
+            <div className="icon">
+              <i className="ri-phone-line" />
+            </div>
+            <div className="info">
+              <h4>Phone Number</h4>
+              <span>
+                <a href="tel:8869003900">+91 88 6900 3900</a>
+              </span>
+              <span>
+                <a href="tel:8869003900">+91 88 6900 3900</a>
+              </span>
+            </div>
+          </div>
+          <div className="box">
+            <div className="icon">
+              <i className="ri-mail-send-line" />
+            </div>
+            <div className="info">
+              <h4>Our Email</h4>
+              <span>
+                <a href="mailto:info@bricklandindia.com">
+                  info@bricklandindia.com
+                </a>
+              </span>
+              <span>
+                <a href="mailto:info@bricklandindia.com">info@bricklandindia.com</a>
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
+      <div
+        className="col-lg-8 col-md-7"
+        data-cue="slideInUp"
+        data-show="true"
+        
+      >
+        <div className="contact-wrap-form">
+          <h3>Get In Touch</h3>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label>Your Name</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter your name"
+                value={name}
+                required="true"
+                onChange={(e) => setName(e.target.value)}
+              />
+              <div className="icon">
+                <i className="ri-user-3-line" />
+              </div>
+            </div>
+            <div className="form-group">
+              <label>Email Address</label>
+              <input
+                type="email"
+                className="form-control"
+                placeholder="Enter email address"
+                required="true"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <div className="icon">
+                <i className="ri-mail-line" />
+              </div>
+            </div>
+            <div className="form-group">
+              <label>Your Phone</label>
+              <input
+                type="phone"
+                className="form-control"
+                placeholder="Enter your phone"
+                name="IN"
+                required="true"
+                title="Enter a valid number"
+                pattern="[1-9]{1}[0-9]{9}"
+                value={mobile}
+                onChange={(e) => setMobile(e.target.value)}
+              />
+              <div className="icon">
+                <i className="ri-phone-line" />
+              </div>
+            </div>
+            <div className="form-group">
+              <label>Your City</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter your City"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+              />
+              <div className="icon">
+                <i className="ri-building-line" />
+              </div>
+            </div>
+            <div className="form-group extra-top">
+              <label>Your Message</label>
+              <textarea
+                className="form-control"
+                placeholder="Your message here"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
+              <div className="icon">
+                <i className="ri-message-2-line" />
+              </div>
+            </div>
+            <div className="contact-btn">
+              <button type="submit" className="default-btn">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{/* old-data  */}
+      
       <div className="flex flex-col md:flex-row">
         <div className="investors-clinic-info md:w-1/2 md:mr-10">
           <h2>BRICKLAND CONSULTING AT A GLANCE</h2>

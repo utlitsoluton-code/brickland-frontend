@@ -65,6 +65,24 @@ export default function Property() {
             
         </div>
      <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10'>
+     <div className="properties-grid-box container">
+  <div className="row justify-content-center align-items-center">
+    <div className="col-lg-7 col-md-6">
+      <p>Showing 1-8 Of 27 Results</p>
+    </div>
+    <div className="col-lg-5 col-md-6">
+      <div className="d-flex align-items-center justify-content-end">
+        <select className="form-select">
+          <option selected="">Recommend</option>
+          <option value={1}>Sort by newest</option>
+          <option value={3}>Sort by latest</option>
+          <option value={1}>Sort by popularity</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
         {properties && properties.length > 0 && (
           <div className=''>
             <div className='my-3'>
