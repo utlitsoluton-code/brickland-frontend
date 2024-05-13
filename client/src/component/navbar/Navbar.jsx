@@ -19,6 +19,7 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+  
   return (
     <Disclosure
       as="nav"

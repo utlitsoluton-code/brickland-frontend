@@ -72,42 +72,42 @@ const Event = () => {
             {
               className: "facebook",
               label: "Facebook",
-              href: "https://www.facebook.com/investorsclinicofficial",
+              href: "facebook link ",
               iconClass: "ri-facebook-fill me-3",
-              followHref: "https://www.facebook.com/investorsclinicofficial",
+              followHref: "facebook link ",
               followLabel: "Like"
 
             },
             {
               className: "twitter",
               label: "Twitter",
-              href: "https://twitter.com/investorclinic",
+              href: "twitter link here",
               iconClass: "ri-twitter-x-line me-3",
-              followHref: "https://twitter.com/investorclinic",
+              followHref: "twitter link here",
               followLabel: "Follow"
             },
             {
               className: "youtube",
               label: "YouTube",
-              href: "https://www.youtube.com/channel/UCBJjotlZNb8ZMhXZDC4-lQg",
+              href: "youtube link here ",
               iconClass: "ri-youtube-line me-3",
-              followHref: "https://www.youtube.com/channel/UCBJjotlZNb8ZMhXZDC4-lQg",
+              followHref: "youtube link here ",
               followLabel: "Subscribe"
             },
             {
               className: "instagram",
               label: "Instagram",
-              href: "https://www.instagram.com/investorsclinicofficial/?igshid=t36f6spxqfye",
+              href: "instagram here",
               iconClass: "ri-instagram-fill me-3",
-              followHref: "https://www.instagram.com/investorsclinicofficial/?igshid=t36f6spxqfye",
+              followHref: "instagram here",
               followLabel: "Follow"
             },
             {
               className: "linkedIn",
               label: "LinkedIn",
-              href: "https://www.linkedin.com/company/investors-clinic-infratech-private-limited/",
+              href: "linked in link here",
               iconClass: "ri-linkedin-fill me-3",
-              followHref: "https://www.linkedin.com/company/investors-clinic-infratech-private-limited/",
+              followHref: "linked in link here",
               followLabel: "Follow"
             }
           ]
@@ -123,7 +123,7 @@ const Event = () => {
   <div className="container">
     <div className="row">
       <div className="col-12">
-        <div className="section-title">{/* <h2>Real Villa Blog</h2> */}</div>
+        <div className="section-title">Events</div>
       </div>
     </div>
     <div className="row">
@@ -166,49 +166,29 @@ const Event = () => {
     </div>
   ))}
         <div className="row">
-          <div className="col-12">
-            <ul className="pagination mt-5">
-              <li className="page-item disabled me-auto"></li>
-              <nav>
-                <ul className="pagination">
-                  <li
-                    className="page-item disabled"
-                    aria-disabled="true"
-                    aria-label="« Previous"
-                  >
-                    <span className="page-link" aria-hidden="true">
-                      ‹
-                    </span>
-                  </li>
-                  <li className="page-item active" aria-current="page">
-                    <span className="page-link">1</span>
-                  </li>
-                  <li className="page-item">
-                    <a
-                      className="page-link"
-                      href="https://investorsclinic.in/events?page=2"
-                    >
-                      2
-                    </a>
-                  </li>
-                  <li className="page-item">
-                    <a
-                      className="page-link"
-                      href="https://investorsclinic.in/events?page=2"
-                      rel="next"
-                      aria-label="Next »"
-                    >
-                      ›
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-              <li className="page-item ms-auto"></li>
-            </ul>
-          </div>
+        <div className="col-lg-12 col-md-12 py-5">
+  <div className="pagination-area">
+    <div className="nav-links">
+      <a href="#" className="prev page-numbers">
+        <i className="ri-arrow-left-s-line" />
+      </a>
+      <span className="page-numbers current">1</span>
+      <a href="#" className="page-numbers">
+        2
+      </a>
+      <a href="#" className="page-numbers">
+        3
+      </a>
+      <a href="#" className="next page-numbers">
+        <i className="ri-arrow-right-s-line" />
+      </a>
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
-      <div className="col-lg-4 mt-4 mt-lg-0">
+      <div className="col-lg-4 mt-4 mt-lg-0 py-4">
   <div className="blog-sidebar property-details-sidebar">
     {sidebarWidgets.map((widget, index) => (
       <div className="widget mt-4" key={index}>
@@ -260,6 +240,7 @@ const Event = () => {
     ))}
   </div>
 </div>
+
     </div>
   </div>
 </section>
