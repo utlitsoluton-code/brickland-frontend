@@ -203,14 +203,13 @@ export default function Footer() {
             </Grid>
             <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>
               <Stack direction={"row"} alignItems={"center"}>
-                <IconButton></IconButton>
                 <Typography color="white" variant="h5">
-                  Newsletter
+                  Market Insights
                 </Typography>
               </Stack>
               <br />
               <Stack direction={"row"} alignItems={"center"}>
-                <input type="text" placeholder="Enter e-mail address" />
+                <input type="text" placeholder="Enter Email Address" className="p-2 rounded"/>
               </Stack>
               <br />
               <Button variant="contained" color="success">
@@ -218,7 +217,7 @@ export default function Footer() {
               </Button>
               <br />
               <br />
-              <Stack color="white">We never spam you!</Stack>
+              {/* <Stack color="white">We never spam you!</Stack> */}
             </Grid>
           </Grid>
           <Box sx={{ py: 3 }}>

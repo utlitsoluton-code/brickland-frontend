@@ -16,6 +16,8 @@ import Listing from "./component/Pages/Listing";
 import BlogDetails from "./component/Blogs/BlogDetails";
 import Testimonial from "./Testimonial/Testimonial";
 import Event from "./component/Event/Event";
+import Page_404 from "./component/Layout/Page_404";
+import Career from "./component/Career/Career";
 
 
 const App = () => {
@@ -25,6 +27,7 @@ const App = () => {
       <BrowserRouter>
         <Navbar />
         <Routes>
+          
           <Route path="/" element={<Home />} />
           <Route exact path="/blog" element={<Blog/>} />
           <Route path="/blog/:id" element={<BlogDetails/>} />
@@ -35,17 +38,14 @@ const App = () => {
           <Route path="/event" element={<Event />} />
           <Route path="/testimonial" element={<Testimonial />} />
           <Route path="/search" element={<City />} />
+          <Route path="/career" element={<Career/>}/>
 
           <Route path="/contactus" element={<ContactUs />} />
-          <Route
-            path="/admin"
-            element={<Signin setIsLoggedIn={setIsLoggedIn} />}
-          />
-          <Route
-            path="/listings"
-            element={isLoggedIn ? <CreateListings setIsLoggedIn={setIsLoggedIn} /> : <Navigate to="/admin" />}
-          />
+          <Route path="/admin" element={<Signin setIsLoggedIn={setIsLoggedIn} />}/>
+          <Route path="/listings" element={isLoggedIn ? <CreateListings setIsLoggedIn={setIsLoggedIn} /> : <Navigate to="/admin" />}/>
           <Route path="/listing/:listingId" element={<Listing />} />
+          <Route path="*" element={<Page_404/>}/>
+
         </Routes>
         <Footer />
       </BrowserRouter>

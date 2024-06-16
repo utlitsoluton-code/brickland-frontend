@@ -6,19 +6,13 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 export default function Property() {
   const [properties, setProperties] = useState([]);
   
-  useEffect(() => {
-    fetchProperties();
-  }, []);
-
   const fetchProperties = async () => {
-    try {
-      const response = await fetch(`https://brickland-backend-4.onrender.com/api/data/`);
-      const data = await response.json();
-      setProperties(data);
-    } catch (error) {
-      console.error('Error fetching properties:', error);
-    }
+   const property = JSON.parse(localStorage.getItem('property'));
+   if(property){ console.log(property,'wishlist property');setProperties(property);}
   };
+  useEffect(()=>{
+    fetchProperties();
+  },[])
   
   return (
     <div>

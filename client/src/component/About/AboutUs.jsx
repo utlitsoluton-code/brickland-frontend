@@ -5,6 +5,10 @@ import {
 } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import team from './../../assets/team.jpg'
+import { IoLocation } from "react-icons/io5";
+import { FaHeart } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 
 const AboutUs = () => {
   const navigate = useNavigate();
@@ -205,14 +209,16 @@ const AboutUs = () => {
 
         {/* -----------------------Our Team ---------------------------------------------- */}
 
-        <div className="text-center text-2xl font-bold">
-          <h2>Our Team</h2></div>
+        <div className="text-center text-2xl mt-5">
+          <h2 className="font-bold text-4xl">The Visionaries</h2>
+          <h4 className="mb-5 text-sm">Innovating together to shape tomorrow's success.</h4>
+        </div>
         <div className="col-lg-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="justify-center">
               <img
-                className="w-24 h-24 object-cover rounded-full"
-                src="https://www.shutterstock.com/image-vector/creative-vector-illustration-default-avatar-260nw-779277895.jpg"
+                className="w-24 h-24 object-cover rounded-full flex text-center justify-center ml-10"
+                src={team}
                 alt="Client 1"
               />
               <div className="z-10 bg-white p-8 rounded-lg shadow-md">
@@ -224,10 +230,10 @@ const AboutUs = () => {
                 <p className="text-gray-500">Mukesh Kumar, CEO</p>
               </div>
             </div>
-            <div className="justify-center">
+            <div className=" justify-center">
               <img
-                className="w-24 h-24 object-cover rounded-full"
-                src="https://www.shutterstock.com/image-vector/creative-vector-illustration-default-avatar-260nw-779277895.jpg"
+                className="w-24 h-24 object-cover rounded-full flex text-center justify-center ml-10"
+                src={team}
                 alt="Client 1"
               />
               <div className="z-10 bg-white p-8 rounded-lg shadow-md">
@@ -241,8 +247,8 @@ const AboutUs = () => {
             </div>
             <div className="justify-center">
               <img
-                className="w-24 h-24 object-cover rounded-full"
-                src="https://www.shutterstock.com/image-vector/creative-vector-illustration-default-avatar-260nw-779277895.jpg"
+                className="w-24 h-24 object-cover rounded-full flex text-center justify-center ml-10"
+                src={team}
                 alt="Client 1"
               />
               <div className="z-10 bg-white p-8 rounded-lg shadow-md">
@@ -365,6 +371,9 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
+      {/* last section */}
+      <div className="flex text-center justify-center text-2xl m-5">Discover <IoLocation style={{ color: 'green', fontSize: '30px', margin: '2px' }}/>a place<FaHome style={{ color: 'gray', fontSize: '30px', margin: '2px' }}/> you'll <FaHeart style={{ color: 'red', fontSize: '30px', margin: '2px' }}/>love to live</div>
+
     </>
   );
 };

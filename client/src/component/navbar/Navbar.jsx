@@ -10,6 +10,7 @@ const navigation = [
   { name: "Wishlist", current: false, path: "/wishlist" },
   { name: "Event", current: false, path: "/event" },
   { name: "Blogs", current: false, path: "/blog" },
+  { name: "career", current: false, path: "/career" },
   { name: "Testimonial", current: false, path: "/testimonial" },
   { name: "Contact us", current: false, path: "/contactus" }
 ];

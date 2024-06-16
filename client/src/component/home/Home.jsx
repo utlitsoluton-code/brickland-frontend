@@ -3,16 +3,21 @@ import {
   Container,
   Grid,
 } from "@mui/material";
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { ReactTyped } from "react-typed";
 import "./home.css";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PropertyCard from "../wishlist/PropertyCard";
+import mission from './../../assets/mission.jpg'
+import { IoLocation } from "react-icons/io5";
+import { FaHeart } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
+
 
 const Home = () => {
   const navigate = useNavigate();
   const [properties, setProperties] = useState([]);
-  
+
   useEffect(() => {
     fetchProperties();
   }, []);
@@ -21,7 +26,7 @@ const Home = () => {
     try {
       const response = await fetch(`https://brickland-backend-4.onrender.com/api/data/`);
       const data = await response.json();
-      setProperties(data.slice(0,8));
+      setProperties(data.slice(0, 6));
     } catch (error) {
       console.error('Error fetching properties:', error);
     }
@@ -35,7 +40,7 @@ const Home = () => {
           autoPlay
           muted
           loop
-          className=""
+          className="h-screen"
         />
         <Box className="content">
           <Container>
@@ -45,7 +50,7 @@ const Home = () => {
               className="sm:mb-40 md:mb-20 lg:mb-32 xl:mb-35"
             >
               <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                <div className="text-white">
+                <div className="text-white ml-10">
                   <h1 className="text-2xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-5xl  whitespace-nowrap font-bold text-white">
                     Uncover Your Dream &nbsp; {"  "}
                     <ReactTyped
@@ -60,25 +65,51 @@ const Home = () => {
                 </div>
                 <div className="relative p-12 search-pad ">
                   <div
-                  className="searchbar-home"
-                  style={{ width: "66rem" }}
+                    className="searchbar-home"
+                    style={{ width: "66rem" }}
                   >
-                  <form className="relative flex z-0 bg-white rounded-full">
-                  <input
-                  type="text"
-                  placeholder="Search by City, Location, Project, Type"
-                  className="overflow-hidden rounded-full flex-1 font-normal  px-6 py-4 text-black-500 focus:outline-none"
-                  />
-                  <Link to="/search">
-                  <button className=" text-black rounded-full place-items-center absolute right-2 top-1/2 -translate-x-1/2 -translate-y-1/2  font-semibold p-3  ">
-                  <i class="ri-search-line align-middle"></i>
-                  </button>
-                  </Link>
-                  </form>
+                    <form className="relative flex z-0 bg-white rounded-full">
+                      <input
+                        type="text"
+                        placeholder="Search by City, Location, Project, Type"
+                        className="overflow-hidden rounded-full flex-1 font-normal  px-6 py-4 text-black-500 focus:outline-none"
+                      />
+                      <Link to="/search">
+                        <button className=" text-black rounded-full place-items-center absolute right-2 top-1/2 -translate-x-1/2 -translate-y-1/2  font-semibold p-3  ">
+                          <i class="ri-search-line align-middle"></i>
+                        </button>
+                      </Link>
+                    </form>
                   </div>
-                                </div>
-</Grid>
+                </div>
+
+
+              </Grid>
             </Grid>
+            {/* No. of Project Completed and No. of Customer */}
+            <div className="grid grid-cols-5 text-center justify-center font-bold">
+              <div className="flex flex-col">
+                <div className="text-white">72418+</div>
+                <div className="text-white">Crore Project Sold</div>
+              </div>
+              <div className="flex flex-col">
+                <div className="text-white">728+</div>
+                <div className="text-white">Happy Customer</div>
+              </div>
+              <div className="flex flex-col">
+                <div className="text-white">78+</div>
+                <div className="text-white">Developer</div>
+              </div>
+              <div className="flex flex-col">
+                <div className="text-white">728+</div>
+                <div className="text-white">Project</div>
+              </div>
+              <div className="flex flex-col">
+                <div className="text-white">8+</div>
+                <div className="text-white">Offices In India</div>
+              </div>
+
+            </div>
           </Container>
         </Box>
       </Box>
@@ -123,273 +154,321 @@ const Home = () => {
           </Grid>
         </Grid>
       </Container> */}
-   <div className="city-area pt-120 pb-95">
-    <h1 className="display-4 text-center mb-5 font-bold">Our Values</h1>
-  <div className="container">
-    <div
-      className="row justify-content-center align-items-center"
-    
-    >
-      <div
-        className="col-lg-6 col-md-12"  >
-        <div className="city-item">
-          <a href="#">
-            <img src="../property-details-large.jpg" alt="image" />
-          </a>
-          <h2 className="prop-title  p-5 ">
-            <h3>Our Mission</h3>
-            <p>Our mission is to transform aspirations into reality by offering exceptional real estate solutions that build thriving communities and enhance lives</p>
-         
-          </h2>
+      {/* <div className="city-area pt-120 pb-95">
+        <h1 className="display-4 text-center mb-5 font-bold">Our Values</h1>
+        <div className="container">
+          <div
+            className="row justify-content-center align-items-center"
 
+          >
+            <div
+              className="col-lg-6 col-md-12"  >
+              <div className="city-item">
+                <a href="#">
+                  <img src="../property-details-large.jpg" alt="image" />
+                </a>
+                <h2 className="prop-title  p-5 ">
+                  <h3>Our Mission</h3>
+                  <p>Our mission is to transform aspirations into reality by offering exceptional real estate solutions that build thriving communities and enhance lives</p>
+
+                </h2>
+
+              </div>
+            </div>
+            <div
+              className="col-lg-6 col-md-12"
+
+            >
+              <div className="row justify-content-center">
+                <div className="col-lg-6 col-md-6">
+                  <div className="city-item">
+                    <a href="#">
+                      <img src="./property-details-large.jpg" alt="image" />
+                    </a>
+                    <h2 className="prop-title  p-3 smaller-font">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
+                    </h2>
+                  </div>
+                </div>
+                <div className="col-lg-6 col-md-6">
+                  <div className="city-item">
+                    <a href="#">
+                      <img src="./property-details-large.jpg" alt="image" />
+                    </a>
+                    <h2 className="prop-title  p-3 smaller-font">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
+                    </h2>
+                  </div>
+                </div>
+                <div className="col-lg-6 col-md-6">
+                  <div className="city-item">
+                    <a href="#">
+                      <img src="./property-details-large.jpg" alt="image" />
+                    </a>
+                    <h2 className="prop-title  p-3 smaller-font">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
+                    </h2>
+                  </div>
+
+                </div>
+                <div className="col-lg-6 col-md-6">
+                  <div className="city-item">
+                    <a href="#">
+                      <img src="./property-details-large.jpg" alt="image" />
+                    </a>
+                    <h2 className="prop-title  p-3 smaller-font">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
+                    </h2>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+      {/* Our Mission and Value */}
+      <div className="grid grid-cols-2">
+        <div className="flex flex-col">
+        <div className="flex text-center justify-center"><img src={mission} className="flex text-center justify-center h-16 w-16"/></div>
+          <div className="text-xl flex text-center justify-center font-bold">Vision</div>
+          <div className="flex text-center justify-center">
+          "To be the leading innovator in real estate, creating transformative spaces that inspire and shape future living and working environments."
+          "To redefine real estate development with sustainable practices, cutting-edge technology, and a commitment to building thriving communities."
+          </div>
+        </div>
+        <div className="flex flex-col">
+          <div className="flex text-center justify-center"><img src={mission} className="flex text-center justify-center h-16 w-16"/></div>
+          <div className="text-xl flex text-center justify-center font-bold">Mission</div>
+          <div className="flex text-center justify-center">
+          "Empowering communities by creating sustainable, innovative real estate solutions that enhance quality of life and drive economic growth."
+          "Transforming the real estate landscape through exceptional service, ethical practices, and unmatched expertise, delivering value to clients and investors."
+          </div>
         </div>
       </div>
-      <div
-        className="col-lg-6 col-md-12"
-       
-      >
-        <div className="row justify-content-center">
-          <div className="col-lg-6 col-md-6">
-            <div className="city-item">
-              <a href="#">
-                <img src="./property-details-large.jpg" alt="image" />
-              </a>
-              <h2 className="prop-title  p-3 smaller-font">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
-          </h2>
-            </div>
-          </div>
-          <div className="col-lg-6 col-md-6">
-            <div className="city-item">
-              <a href="#">
-                <img src="./property-details-large.jpg" alt="image" />
-              </a>
-                <h2 className="prop-title  p-3 smaller-font">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
-          </h2>
-            </div>
-          </div>
-          <div className="col-lg-6 col-md-6">
-            <div className="city-item">
-              <a href="#">
-                <img src="./property-details-large.jpg" alt="image" />
-              </a>
-              <h2 className="prop-title  p-3 smaller-font">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
-          </h2>
-            </div>
-             
-          </div>
-          <div className="col-lg-6 col-md-6">
-            <div className="city-item">
-              <a href="#">
-                <img src="./property-details-large.jpg" alt="image" />
-              </a>
-                <h2 className="prop-title  p-3 smaller-font">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
-          </h2>
-            </div>
-            
+      <div className="flex flex-col">
+          <div className="flex text-center justify-center"><img src={mission} className="flex text-center justify-center h-16 w-16"/></div>
+          <div className="text-xl flex text-center justify-center font-bold">Values</div>
+          <div className="flex text-center justify-center">
+          "To be the leading innovator in real estate, creating transformative spaces that inspire and shape future living and working environments."
+          "To redefine real estate development with sustainable practices, cutting-edge technology, and a commitment to building thriving communities."
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-      
-    {/* new section  */}
 
-    {properties && properties.length > 0 && (
-          <div className='row'>
-            <div className='my-3 mx-3'>
-            <h1 className="display-4 text-center mb-5 font-bold">Best properties </h1>
-              {/* <Link className='text-sm text-blue-800 hover:underline' to={'/search?offer=true'}>Show more offers</Link> */}
+      {/* Exclusive Project Section   */}
+      {properties && properties.length > 0 && (
+        <div className='row'>
+          <div className='my-3 mx-3'>
+            <h1 className="display-5 text-center font-bold">Exclusive Project</h1>
+            <h4 className="text-center text-sm">Empowering the Future, One Innovation at a Time.</h4>
+          </div>
+          <div className="flex text-center justify-center">
+            <div className='grid grid-cols-3 gap-4'>
+              {properties.map((property) => (
+                  <PropertyCard listing={property} />
+              ))}
             </div>
-            <div className='flex flex-wrap gap-3 mx-3'>
+          </div>
+        </div>)}
+
+      {/* Top Search Properties */}
+      {properties && properties.length > 0 && (
+        <div className='row'>
+          <div className='my-3 mx-3'>
+            <h1 className="display-5 text-center font-bold">Top Search Properties</h1>
+            <h4 className="text-center text-sm">Empowering the Future, One Innovation at a Time.</h4>
+          </div>
+          <div className="flex text-center justify-center">
+            <div className='grid grid-cols-3 gap-4'>
               {properties.map((property) => (
                 <Link key={property.id} to={`/listing/${property._id}`}>
-                   <PropertyCard listing={property} />
+                  <PropertyCard listing={property} />
                 </Link>
               ))}
-              </div>
-              </div>)}
+            </div>
+          </div>
+        </div>)}
 
-{/* seee more property */}
-<div className="flex text-center justify-center my-5">
-  <button className="rounded-pill text-lg default-btn text-black text-center w-64 px-4 py-2" onClick={() => { navigate('/search'); }}>See More Property</button>
-</div>
-{/* new section  end  */}
+
+      {/* seee more property */}
+      <div className="flex text-center justify-center my-5">
+        <button className="rounded-pill text-lg default-btn text-black text-center w-64 px-4 py-2" onClick={() => { navigate('/search'); }}>See More Property</button>
+      </div>
+
+      {/* new section  end  */}
       {/* cta section  */}
-<div className="information-area">
-  <div className="container">
-    <div className="information-inner-area">
-      <div
-        className="row justify-content-center align-items-center"
-        data-cues="slideInUp"
-        data-disabled="true"
-      >
-        <div
-          className="col-xl-6 col-md-12"
-          data-cue="slideInUp"
-          data-show="true"
-          style={{
-            animationName: "slideInUp",
-            animationDuration: "600ms",
-            animationTimingFunction: "ease",
-            animationDelay: "0ms",
-            animationDirection: "normal",
-            animationFillMode: "both"
-          }}
-        >
-          <div className="information-content">
-            <span className="sub">
-            10 new offers evry day. 350 offers on site trusted by a community of the thousands of users
-            </span>
-            <h2>
-Looking for the new home?</h2>
-          </div>
-        </div>
-        <div
-          className="col-xl-6 col-md-12"
-          data-cue="slideInUp"
-          data-show="true"
-          style={{
-            animationName: "slideInUp",
-            animationDuration: "600ms",
-            animationTimingFunction: "ease",
-            animationDelay: "0ms",
-            animationDirection: "normal",
-            animationFillMode: "both"
-          }}
-        >
-          <ul className="information-list">
-            <li>
-              <div className="phone-info">
-                <div className="icon">
-                  <i className="ri-phone-line" />
+      <div className="information-area">
+        <div className="container">
+          <div className="information-inner-area">
+            <div
+              className="row justify-content-center align-items-center"
+              data-cues="slideInUp"
+              data-disabled="true"
+            >
+              <div
+                className="col-xl-6 col-md-12"
+                data-cue="slideInUp"
+                data-show="true"
+                style={{
+                  animationName: "slideInUp",
+                  animationDuration: "600ms",
+                  animationTimingFunction: "ease",
+                  animationDelay: "0ms",
+                  animationDirection: "normal",
+                  animationFillMode: "both"
+                }}
+              >
+                <div className="information-content">
+                  <span className="sub">
+                    10 new offers evry day. 350 offers on site trusted by a community of the thousands of users
+                  </span>
+                  <h2>
+                    Looking for the new home?</h2>
                 </div>
-                <a href="tel:00201068710594">+(002) 0106-8710-594</a>
               </div>
-            </li>
-            <li>
-              <a href="property-grid.html" className="default-btn">
-                Find Premium Property
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{/* cta section end  */}
-     
-  {/* why choose us section  */}
-  <div className="why-choose-area pt-120 pb-95">
-  <div className="container">
-    <div
-      className="row justify-content-center"
-      data-cues="slideInUp"
-      data-disabled="true"
-    >
-      <div
-        className="col-lg-3 col-md-6"
-        data-cue="slideInUp"
-        data-show="true"
-        style={{
-          animationName: "slideInUp",
-          animationDuration: "600ms",
-          animationTimingFunction: "ease",
-          animationDelay: "0ms",
-          animationDirection: "normal",
-          animationFillMode: "both"
-        }}
-      >
-        <div className="why-choose-content">
-          <span className="sub">Bricks And Clicks</span>
-          <h2>Why Choose Us?</h2>
-        </div>
-      </div>
-      <div
-        className="col-lg-3 col-md-6"
-        data-cue="slideInUp"
-        data-show="true"
-        style={{
-          animationName: "slideInUp",
-          animationDuration: "600ms",
-          animationTimingFunction: "ease",
-          animationDelay: "180ms",
-          animationDirection: "normal",
-          animationFillMode: "both"
-        }}
-      >
-        <div className="why-choose-card">
-          <div className="image">
-            <img src="./why-choose1.png" alt="image" />
+              <div
+                className="col-xl-6 col-md-12"
+                data-cue="slideInUp"
+                data-show="true"
+                style={{
+                  animationName: "slideInUp",
+                  animationDuration: "600ms",
+                  animationTimingFunction: "ease",
+                  animationDelay: "0ms",
+                  animationDirection: "normal",
+                  animationFillMode: "both"
+                }}
+              >
+                <ul className="information-list">
+                  <li>
+                    <div className="phone-info">
+                      <div className="icon">
+                        <i className="ri-phone-line" />
+                      </div>
+                      <a href="tel:00201068710594">+(002) 0106-8710-594</a>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="property-grid.html" className="default-btn">
+                      Find Premium Property
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <h3>Sell, Rent Property Free</h3>
-          <p>
-          Our experts answer all queries with their unmatched knowledge at every step of home buying.
-          </p>
         </div>
       </div>
-      <div
-        className="col-lg-3 col-md-6"
-        data-cue="slideInUp"
-        data-show="true"
-        style={{
-          animationName: "slideInUp",
-          animationDuration: "600ms",
-          animationTimingFunction: "ease",
-          animationDelay: "360ms",
-          animationDirection: "normal",
-          animationFillMode: "both"
-        }}
-      >
-        <div className="why-choose-card">
-          <div className="image">
-            <img src="./why-choose2.png" alt="image" />
+      {/* cta section end  */}
+
+      {/* why choose us section  */}
+      <div className="why-choose-area pt-120 pb-95">
+        <div className="container">
+          <div
+            className="row justify-content-center"
+            data-cues="slideInUp"
+            data-disabled="true"
+          >
+            <div
+              className="col-lg-3 col-md-6"
+              data-cue="slideInUp"
+              data-show="true"
+              style={{
+                animationName: "slideInUp",
+                animationDuration: "600ms",
+                animationTimingFunction: "ease",
+                animationDelay: "0ms",
+                animationDirection: "normal",
+                animationFillMode: "both"
+              }}
+            >
+              <div className="why-choose-content">
+                <span className="sub">Bricks And Clicks</span>
+                <h2>Why Choose Us?</h2>
+              </div>
+            </div>
+            <div
+              className="col-lg-3 col-md-6"
+              data-cue="slideInUp"
+              data-show="true"
+              style={{
+                animationName: "slideInUp",
+                animationDuration: "600ms",
+                animationTimingFunction: "ease",
+                animationDelay: "180ms",
+                animationDirection: "normal",
+                animationFillMode: "both"
+              }}
+            >
+              <div className="why-choose-card">
+                <div className="image">
+                  <img src="./why-choose1.png" alt="image" />
+                </div>
+                <h3>Sell, Rent Property Free</h3>
+                <p>
+                  Our experts answer all queries with their unmatched knowledge at every step of home buying.
+                </p>
+              </div>
+            </div>
+            <div
+              className="col-lg-3 col-md-6"
+              data-cue="slideInUp"
+              data-show="true"
+              style={{
+                animationName: "slideInUp",
+                animationDuration: "600ms",
+                animationTimingFunction: "ease",
+                animationDelay: "360ms",
+                animationDirection: "normal",
+                animationFillMode: "both"
+              }}
+            >
+              <div className="why-choose-card">
+                <div className="image">
+                  <img src="./why-choose2.png" alt="image" />
+                </div>
+                <h3>In-depth Info on Investment Hotspots</h3>
+                <p>
+                  Our experts answer all queries with their unmatched knowledge at every step of home buying.
+                </p>
+              </div>
+            </div>
+            <div
+              className="col-lg-3 col-md-6"
+              data-cue="slideInUp"
+              data-show="true"
+              style={{
+                animationName: "slideInUp",
+                animationDuration: "600ms",
+                animationTimingFunction: "ease",
+                animationDelay: "540ms",
+                animationDirection: "normal",
+                animationFillMode: "both"
+              }}
+            >
+              <div className="why-choose-card">
+                <div className="image">
+                  <img src="./why-choose3.png" alt="image" />
+                </div>
+                <h3>Pool of Best Property Options</h3>
+                <p>
+                  Our experts answer all queries with their unmatched knowledge at every step of home buying.
+                </p>
+              </div>
+            </div>
           </div>
-          <h3>In-depth Info on Investment Hotspots</h3>
-          <p>
-          Our experts answer all queries with their unmatched knowledge at every step of home buying.
-          </p>
         </div>
       </div>
-      <div
-        className="col-lg-3 col-md-6"
-        data-cue="slideInUp"
-        data-show="true"
-        style={{
-          animationName: "slideInUp",
-          animationDuration: "600ms",
-          animationTimingFunction: "ease",
-          animationDelay: "540ms",
-          animationDirection: "normal",
-          animationFillMode: "both"
-        }}
-      >
-        <div className="why-choose-card">
-          <div className="image">
-            <img src="./why-choose3.png" alt="image" />
-          </div>
-          <h3>Pool of Best Property Options</h3>
-          <p>
-          Our experts answer all queries with their unmatched knowledge at every step of home buying.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
-  {/* why choose us section end */}
+      {/* why choose us section end */}
+      <div className="flex text-center justify-center text-2xl m-5">Discover <IoLocation style={{ color: 'green', fontSize: '30px', margin: '2px' }}/>a place<FaHome style={{ color: 'gray', fontSize: '30px', margin: '2px' }}/> you'll <FaHeart style={{ color: 'red', fontSize: '30px', margin: '2px' }}/>love to live</div>
+
     </>
   );
 };
