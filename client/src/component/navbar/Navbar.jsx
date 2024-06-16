@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Home", current: false, path: "/" },
-  { name: "Event", current: false, path: "/event" },
-  { name: "Testimonial", current: false, path: "/testimonial" },
+  { name: "About", current: false, path: "/aboutus" },
+  { name: "Property", current: false, path: "/search" },
   { name: "Wishlist", current: false, path: "/wishlist" },
-  { name: "Search", current: false, path: "/search" },
+  { name: "Event", current: false, path: "/event" },
   { name: "Blogs", current: false, path: "/blog" },
-  { name: "About us", current: false, path: "/aboutus" },
+  { name: "Testimonial", current: false, path: "/testimonial" },
   { name: "Contact us", current: false, path: "/contactus" }
 ];
 

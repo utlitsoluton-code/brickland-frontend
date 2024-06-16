@@ -354,7 +354,7 @@ export default function Listing() {
                       </div>
                     </div>
                     <div className="form-group">
-                      <label>Phone No.</label>
+                      <label>Phone No</label>
                       <input
                         type="text"
                         placeholder={+12345678}
@@ -365,7 +365,7 @@ export default function Listing() {
                       </div>
                     </div>
                     <div className="form-group">
-                      <label>Phone No.</label>
+                      <label>City</label>
                       <input
                         type="text"
                         placeholder={"Your City"}
@@ -418,7 +418,7 @@ export default function Listing() {
   </div>
 </div>
 {/* existing code  */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 px-4 sm:px-6 lg:px-8">
+    {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 px-4 sm:px-6 lg:px-8">
       <div className="mt-10">
         <div className="container mx-auto max-w-[700px]">
           <main className="container">
@@ -592,7 +592,7 @@ export default function Listing() {
           </form>
         </div>
       </div>
-    </div>
+    </div> */}
     </>
   );
   

@@ -4,7 +4,7 @@ import { blogItem } from "../../assets/items";
 import { Link } from "react-router-dom";
 
 export default function Blog() {
-  return (
+    return (
     <div className="blog-area ptb-120">
       <div className="container">
         <div className="row justify-content-center">

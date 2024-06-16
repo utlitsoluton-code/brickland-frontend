@@ -11,7 +11,8 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`https://brickland-backend-4.onrender.com/send-email`, {
+      const url = 'http://localhost:3311/api/user/callback/add'
+      await axios.post(url, {
         name,
         email,
         city,

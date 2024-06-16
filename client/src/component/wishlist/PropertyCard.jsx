@@ -12,7 +12,7 @@ export default function PropertyCard({ listing }) {
   };
   return (
     <div className='bg-white shadow-md hover:shadow-lg
-    transition-shadow overflow-hidden rounded-lg w-full sm:w-[330px]'>
+    transition-shadow overflow-hidden rounded-lg w-full sm:w-[330px] h-[460px]'>
       <Link to={`https://brickland-backend-4.onrender.com/api/data/`}>
         <img src={listing.imageUrls[1]}
           alt="listings"

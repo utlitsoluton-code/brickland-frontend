@@ -3,12 +3,29 @@ import {
   Container,
   Grid,
 } from "@mui/material";
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { ReactTyped } from "react-typed";
 import "./home.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import PropertyCard from "../wishlist/PropertyCard";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const [properties, setProperties] = useState([]);
+  
+  useEffect(() => {
+    fetchProperties();
+  }, []);
+
+  const fetchProperties = async () => {
+    try {
+      const response = await fetch(`https://brickland-backend-4.onrender.com/api/data/`);
+      const data = await response.json();
+      setProperties(data.slice(0,8));
+    } catch (error) {
+      console.error('Error fetching properties:', error);
+    }
+  };
   return (
     <>
       <Box className="main">
@@ -43,24 +60,24 @@ const Home = () => {
                 </div>
                 <div className="relative p-12 search-pad ">
                   <div
-                    className="searchbar-home"
-                    style={{ width: "66rem" }}
+                  className="searchbar-home"
+                  style={{ width: "66rem" }}
                   >
-                    <form className="relative flex z-0 bg-white rounded-full">
-                      <input
-                        type="text"
-                        placeholder="Search by City, Location, Project, Type"
-                        className="overflow-hidden rounded-full flex-1 font-normal  px-6 py-4 text-black-500 focus:outline-none"
-                      />
-                      <Link to="/search">
-                        <button className=" text-black rounded-full place-items-center absolute right-2 top-1/2 -translate-x-1/2 -translate-y-1/2  font-semibold p-3  ">
-                        <i class="ri-search-line align-middle"></i>
-                        </button>
-                      </Link>
-                    </form>
+                  <form className="relative flex z-0 bg-white rounded-full">
+                  <input
+                  type="text"
+                  placeholder="Search by City, Location, Project, Type"
+                  className="overflow-hidden rounded-full flex-1 font-normal  px-6 py-4 text-black-500 focus:outline-none"
+                  />
+                  <Link to="/search">
+                  <button className=" text-black rounded-full place-items-center absolute right-2 top-1/2 -translate-x-1/2 -translate-y-1/2  font-semibold p-3  ">
+                  <i class="ri-search-line align-middle"></i>
+                  </button>
+                  </Link>
+                  </form>
                   </div>
-                </div>
-              </Grid>
+                                </div>
+</Grid>
             </Grid>
           </Container>
         </Box>
@@ -107,7 +124,7 @@ const Home = () => {
         </Grid>
       </Container> */}
    <div className="city-area pt-120 pb-95">
-    <h1 className="display-4 text-center mb-5 font-bold">Best properties </h1>
+    <h1 className="display-4 text-center mb-5 font-bold">Our Values</h1>
   <div className="container">
     <div
       className="row justify-content-center align-items-center"
@@ -120,11 +137,9 @@ const Home = () => {
             <img src="../property-details-large.jpg" alt="image" />
           </a>
           <h2 className="prop-title  p-5 ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, itaque!
+            <h3>Our Mission</h3>
+            <p>Our mission is to transform aspirations into reality by offering exceptional real estate solutions that build thriving communities and enhance lives</p>
+         
           </h2>
 
         </div>
@@ -188,222 +203,25 @@ const Home = () => {
 
       
     {/* new section  */}
-<div className="section section-properties">
-  <div className="container">
-    <div className="row">
-      <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-        <div className="property-item mb-30">
-          <a href="#" className="img">
-            <img src="https://firebasestorage.googleapis.com/v0/b/brickland-76c23.appspot.com/o/4.png?alt=media&token=eb6a9a2d-e0be-4ea4-a004-616bb16dd501" alt="Image" className="img-fluid" />
-          </a>
-          <div className="property-content">
-            <div className="price mb-2">
-              <span>Godrej Tropical Isle</span>
+
+    {properties && properties.length > 0 && (
+          <div className='row'>
+            <div className='my-3 mx-3'>
+            <h1 className="display-4 text-center mb-5 font-bold">Best properties </h1>
+              {/* <Link className='text-sm text-blue-800 hover:underline' to={'/search?offer=true'}>Show more offers</Link> */}
             </div>
-            <div>
-              <span className="d-block mb-2 text-black-50">
-              Location
-              </span>
-              <span className="city d-block mb-3">Godrej Tropical Isle by Brick Land is a beautiful, green housing project offering modern amenities in a nature-friendly setting.</span>
-              <div className="specs d-flex mb-4">
-                <span className="d-block d-flex align-items-center me-3">
-                  <span className="ri-hotel-bed-line me-2"></span>
-                  <span className="caption">2 beds</span>
-                </span>
-                <span className="d-block d-flex align-items-center">
-                  <span className="icon-bath me-2" />
-                  <span className="caption">2 baths</span>
-                </span>
+            <div className='flex flex-wrap gap-3 mx-3'>
+              {properties.map((property) => (
+                <Link key={property.id} to={`/listing/${property._id}`}>
+                   <PropertyCard listing={property} />
+                </Link>
+              ))}
               </div>
-              <a
-                href="#"
-                className="btn btn-primary py-2 px-3"
-              >
-                See details
-              </a>
-            </div>
-          </div>
-        </div>
-        {/* .item */}
-      </div>
-      <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-        <div className="property-item mb-30">
-          <a href="#" className="img">
-            <img src="https://firebasestorage.googleapis.com/v0/b/brickland-76c23.appspot.com/o/5.png?alt=media&token=90963281-53b8-4eaf-bcdf-3457652e4e99" alt="Image" className="img-fluid" />
-          </a>
-          <div className="property-content">
-            <div className="price mb-2">
-              <span>Max Estate 128</span>
-            </div>
-            <div>
-              <span className="d-block mb-2 text-black-50">
-             Location
-              </span>
-              <span className="city d-block mb-3">Max Estate 128, by Brickland, is a commercial project offering modern office spaces aimed at enhancing business growth and networking.</span>
-              <div className="specs d-flex mb-4">
-                <span className="d-block d-flex align-items-center me-3">
-                  <span className="ri-hotel-bed-line me-2"></span>
-                  <span className="caption">2 beds</span>
-                </span>
-                <span className="d-block d-flex align-items-center">
-                  <span className="icon-bath me-2" />
-                  <span className="caption">2 baths</span>
-                </span>
-              </div>
-              <a
-                href="#"
-                className="btn btn-primary py-2 px-3"
-              >
-                See details
-              </a>
-            </div>
-          </div>
-        </div>
-        {/* .item */}
-      </div>
-      <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-        <div className="property-item mb-30">
-          <a href="#" className="img">
-            <img src="https://firebasestorage.googleapis.com/v0/b/brickland-76c23.appspot.com/o/6.png?alt=media&token=7a868f81-10af-4cdc-b4d8-ea69f495ea11" alt="Image" className="img-fluid" />
-          </a>
-          <div className="property-content">
-            <div className="price mb-2">
-              <span>M3M The Cullinan</span>
-            </div>
-            <div>
-              <span className="d-block mb-2 text-black-50">
-               Location
-              </span>
-              <span className="city d-block mb-3">M3M The Cullinan by Brickland offers premium commercial spaces in Gurgaon, blending luxury with modern architecture for businesses.</span>
-              <div className="specs d-flex mb-4">
-                <span className="d-block d-flex align-items-center me-3">
-                <span className="ri-hotel-bed-line me-2"></span>
-                  <span className="caption">2 beds</span>
-                </span>
-                <span className="d-block d-flex align-items-center">
-                  <span className="icon-bath me-2" />
-                  <span className="caption">2 baths</span>
-                </span>
-              </div>
-              <a
-                href="#"
-                className="btn btn-primary py-2 px-3"
-              >
-                See details
-              </a>
-            </div>
-          </div>
-        </div>
-        {/* .item */}
-      </div>
-      <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-        <div className="property-item mb-30">
-          <a href="#" className="img">
-            <img src="https://firebasestorage.googleapis.com/v0/b/brickland-76c23.appspot.com/o/4.png?alt=media&token=eb6a9a2d-e0be-4ea4-a004-616bb16dd501" alt="Image" className="img-fluid" />
-          </a>
-          <div className="property-content">
-            <div className="price mb-2">
-              <span>Greenbay Plot</span>
-            </div>
-            <div>
-              <span className="d-block mb-2 text-black-50">
-               Location
-              </span>
-              <span className="city d-block mb-3">Eldeco The Greens Phase 3 by Brickland is a commercial project offering modern spaces for businesses in a green, eco-friendly environment.</span>
-              <div className="specs d-flex mb-4">
-                <span className="d-block d-flex align-items-center me-3">
-                  <span className="ri-hotel-bed-line me-2"></span>
-                  <span className="caption">2 beds</span>
-                </span>
-                <span className="d-block d-flex align-items-center">
-                  <span className="icon-bath me-2" />
-                  <span className="caption">2 baths</span>
-                </span>
-              </div>
-              <a
-                href="#"
-                className="btn btn-primary py-2 px-3"
-              >
-                See details
-              </a>
-            </div>
-          </div>
-        </div>
-        {/* .item */}
-      </div>
-      <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-        <div className="property-item mb-30">
-          <a href="#" className="img">
-            <img src="https://firebasestorage.googleapis.com/v0/b/brickland-76c23.appspot.com/o/4.png?alt=media&token=eb6a9a2d-e0be-4ea4-a004-616bb16dd501" alt="Image" className="img-fluid" />
-          </a>
-          <div className="property-content">
-            <div className="price mb-2">
-              <span>Greenbay Plot</span>
-            </div>
-            <div>
-              <span className="d-block mb-2 text-black-50">
-               Location
-              </span>
-              <span className="city d-block mb-3">Eldeco The Greens Phase 3 by Brickland is a commercial project offering modern spaces for businesses in a green, eco-friendly environment.</span>
-              <div className="specs d-flex mb-4">
-                <span className="d-block d-flex align-items-center me-3">
-                  <span className="ri-hotel-bed-line me-2"></span>
-                  <span className="caption">2 beds</span>
-                </span>
-                <span className="d-block d-flex align-items-center">
-                  {/* <span className="icon-bath me-2" /> */}
-                  <span className="ri-hotel-bed-line me-2"></span>
-                  <span className="caption">2 baths</span>
-                </span>
-              </div>
-              <a
-                href="#"
-                className="btn btn-primary py-2 px-3"
-              >
-                See details
-              </a>
-            </div>
-          </div>
-        </div>
-        {/* .item */}
-      </div>
-      <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-        <div className="property-item mb-30">
-          <a href="#" className="img">
-            <img src="https://firebasestorage.googleapis.com/v0/b/brickland-76c23.appspot.com/o/4.png?alt=media&token=eb6a9a2d-e0be-4ea4-a004-616bb16dd501" alt="Image" className="img-fluid" />
-          </a>
-          <div className="property-content">
-            <div className="price mb-2">
-              <span>Greenbay Plot</span>
-            </div>
-            <div>
-              <span className="d-block mb-2 text-black-50">
-               Location
-              </span>
-              <span className="city d-block mb-3">Eldeco The Greens Phase 3 by Brickland is a commercial project offering modern spaces for businesses in a green, eco-friendly environment.</span>
-              <div className="specs d-flex mb-4">
-                <span className="d-block d-flex align-items-center me-3">
-                <span className="ri-hotel-bed-line me-2"></span>
-                  <span className="caption">2 beds</span>
-                </span>
-                <span className="d-block d-flex align-items-center">
-                  <span className="icon-bath me-2" />
-                  <span className="caption">2 baths</span>
-                </span>
-              </div>
-              <a
-                href="#"
-                className="btn btn-primary py-2 px-3"
-              >
-                See details
-              </a>
-            </div>
-          </div>
-        </div>
-        {/* .item */}
-      </div>
-    </div>
-  </div>
+              </div>)}
+
+{/* seee more property */}
+<div className="flex text-center justify-center my-5">
+  <button className="rounded-pill text-lg default-btn text-black text-center w-64 px-4 py-2" onClick={() => { navigate('/search'); }}>See More Property</button>
 </div>
 {/* new section  end  */}
       {/* cta section  */}
@@ -569,6 +387,7 @@ Looking for the new home?</h2>
     </div>
   </div>
 </div>
+
 
   {/* why choose us section end */}
     </>

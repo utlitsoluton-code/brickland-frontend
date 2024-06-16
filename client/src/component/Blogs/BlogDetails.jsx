@@ -1,11 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { blogItem } from '../../assets/items';
+import { Link } from 'react-router-dom';
 
 const BlogDetails = () => {
   const { id } = useParams(); // Extract the ID from the URL
   const post = blogItem.find(item => item.id.toString() === id); // Find the blog post by ID
-
+  
   if (!post) {
     return <div>Blog post not found!</div>; // Return error message if no post found
   }
@@ -193,6 +194,37 @@ const BlogDetails = () => {
                 </button>
               </form>
             </div>
+            {/* -------------related blog--------------------- */}
+            <div className=''>Related Blog</div>
+
+            <div className='grid grid-cols-3 row justify-center'>
+            {blogItem.map(post => (
+            <div className="col-xl-4 col-md-6" key={post.id}>
+              <div className="blog-card">
+                <div className="blog-image">
+                  <Link to={`/blog/${post.id}`}>
+                    <img src={post.imageUrl} alt="Blog post" />
+                  </Link>
+                  <Link to={`/blog/${post.id}`} className="tag-btn">Real Estate</Link>
+                  <Link to={`/blog/${post.id}`} className="author-btn">
+                    <img src={post.authorImageUrl} alt="Author" />
+                  </Link>
+                </div>
+                <div className="blog-content">
+                  <ul className="meta">
+                    <li><i className="ri-calendar-2-line" />{post.date}</li>
+                  </ul>
+                  <h3>
+                    {/* <Link to={`/blog/${post.id}`}>{post.blog_title}</Link> */}
+                  </h3>
+                  {/* <p className='text-sm'>{post.short_para}</p> */}
+                </div>
+              </div>
+            </div>
+          ))}
+            </div>
+            {/* --------------related blog end------------------- */}
+
           </div>
         </div>
       </div>
